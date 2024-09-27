@@ -21,7 +21,7 @@ graph_config = {
         "model": "openai/gpt-4o",
     },
     "verbose": True,
-    "headless": False,
+    "headless": True,
 }
 
 # ************************************************
