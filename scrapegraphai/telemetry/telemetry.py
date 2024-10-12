@@ -27,7 +27,10 @@ import uuid
 from typing import Callable, Dict
 from urllib import request
 
-VERSION = importlib.metadata.version("scrapegraphai")
+try:
+    VERSION = importlib.metadata.version("scrapegraphai")
+except:
+    VERSION = "0.00.0"
 STR_VERSION = ".".join([str(i) for i in VERSION])
 HOST = "https://eu.i.posthog.com"
 TRACK_URL = f"{HOST}/capture/"  # https://posthog.com/docs/api/post-only-endpoints

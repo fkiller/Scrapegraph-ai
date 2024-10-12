@@ -56,6 +56,38 @@ Additional dependecies can be added while installing the library:
 
 </details>
 
+## 🕷️ Module debug mode 
+
+This debug branch is to run examples of Scrapegraph-ai without installing scrapegraphai package: [pypi](https://pypi.org/project/scrapegraphai/).
+
+```bash
+pip install -r requirements.txt
+
+playwright install-deps
+playwright install
+```
+In Visual Studio Code, create a Python Debugger then modify launch.json in Run and Debug tab as below.
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "internalConsole",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "SCRAPEGRAPHAI_TELEMETRY_ENABLED": "false"
+            }
+        }
+    ]
+}
+```
+Select any examples and press F5 in Visual Studio Code.
+
+**Note**: it is recommended to install the library in a virtual environment to avoid conflicts with other libraries 🐱
 
 ## 💻 Usage
 There are multiple standard scraping pipelines that can be used to extract information from a website (or local file).
